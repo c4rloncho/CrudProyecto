@@ -1,6 +1,5 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateProyectoDto } from './create-proyecto.dto';
-
-export class UpdateProyectoDto extends PartialType(CreateProyectoDto) {
-  id: number;
+// update-profile.dto.ts
+export class UpdateProyectoDto {
+  readonly nombre?: string;
+  readonly descripcion?: string;
 }
