@@ -4,6 +4,7 @@ import { Repository } from "typeorm";
 import { CreateProyectoDto } from "../dto/create-proyecto.dto";
 import { InjectRepository } from '@nestjs/typeorm';
 import { UpdateProyectoDto } from "../dto/update-proyecto.dto";
+import { create } from "domain";
 
 @Injectable()
 export class ProyectoService {
@@ -17,6 +18,7 @@ export class ProyectoService {
   }
 
   async createProyecto(createProyectoDto: CreateProyectoDto): Promise<Proyecto> {
+    verificarIds(createProyectoDto);
     const nuevoProyecto = this.proyectoRepository.create(createProyectoDto);
     return await this.proyectoRepository.save(nuevoProyecto);
   }
@@ -50,4 +52,8 @@ export class ProyectoService {
 
     await this.proyectoRepository.remove(proyecto);
   }
+}
+
+function verificarIds(createProyectoDto: CreateProyectoDto) {
+ 
 }

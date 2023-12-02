@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, NotFoundException, Param, Post, Put } from "@nestjs/common";
 import { ProyectoService } from "../services/proyecto.service";
-import { CreateProyectoDto } from "../dto/create-proyecyo.dto";
+import { CreateProyectoDto } from "../dto/create-proyecto.dto";
+import { UpdateProyectoDto } from "../dto/update-proyecto.dto";
 
 @Controller('proyectos')
 export class ProyectoController {
